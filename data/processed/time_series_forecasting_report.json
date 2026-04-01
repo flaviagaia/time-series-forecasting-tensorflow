@@ -10,7 +10,7 @@
   "dataset_artifact": "/Users/flaviagaia/Documents/CV_FLAVIA_CODEX/time-series-forecasting-tensorflow/data/raw/daily_demand_series.csv",
   "forecast_artifact": "/Users/flaviagaia/Documents/CV_FLAVIA_CODEX/time-series-forecasting-tensorflow/data/processed/forecast_values.csv",
   "model_artifact": "/Users/flaviagaia/Documents/CV_FLAVIA_CODEX/time-series-forecasting-tensorflow/artifacts/best_model.joblib",
-  "tensorboard_log_dir": "/Users/flaviagaia/Documents/CV_FLAVIA_CODEX/time-series-forecasting-tensorflow/logs/fit/20260401-174621",
-  "history_artifact": "/Users/flaviagaia/Documents/CV_FLAVIA_CODEX/time-series-forecasting-tensorflow/logs/fit/20260401-174621/history.json",
+  "tensorboard_log_dir": "/Users/flaviagaia/Documents/CV_FLAVIA_CODEX/time-series-forecasting-tensorflow/logs/fit/20260401-174656",
+  "history_artifact": "/Users/flaviagaia/Documents/CV_FLAVIA_CODEX/time-series-forecasting-tensorflow/logs/fit/20260401-174656/history.json",
   "report_artifact": "/Users/flaviagaia/Documents/CV_FLAVIA_CODEX/time-series-forecasting-tensorflow/data/processed/time_series_forecasting_report.json"
 }
