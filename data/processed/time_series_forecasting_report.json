@@ -1,0 +1,16 @@
+{
+  "runtime_mode": "fallback_without_tensorflow",
+  "row_count": 240,
+  "window_size": 14,
+  "train_window_count": 180,
+  "test_window_count": 46,
+  "mae": 11.176,
+  "rmse": 12.4578,
+  "mape": 11.1146,
+  "dataset_artifact": "/Users/flaviagaia/Documents/CV_FLAVIA_CODEX/time-series-forecasting-tensorflow/data/raw/daily_demand_series.csv",
+  "forecast_artifact": "/Users/flaviagaia/Documents/CV_FLAVIA_CODEX/time-series-forecasting-tensorflow/data/processed/forecast_values.csv",
+  "model_artifact": "/Users/flaviagaia/Documents/CV_FLAVIA_CODEX/time-series-forecasting-tensorflow/artifacts/best_model.joblib",
+  "tensorboard_log_dir": "/Users/flaviagaia/Documents/CV_FLAVIA_CODEX/time-series-forecasting-tensorflow/logs/fit/20260401-174621",
+  "history_artifact": "/Users/flaviagaia/Documents/CV_FLAVIA_CODEX/time-series-forecasting-tensorflow/logs/fit/20260401-174621/history.json",
+  "report_artifact": "/Users/flaviagaia/Documents/CV_FLAVIA_CODEX/time-series-forecasting-tensorflow/data/processed/time_series_forecasting_report.json"
+}
