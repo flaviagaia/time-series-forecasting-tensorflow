@@ -4,17 +4,6 @@
 
 `time-series-forecasting-tensorflow` é um projeto de previsão temporal com `TensorFlow/Keras` e acompanhamento de treino com `TensorBoard`, desenhado para mostrar como estruturar um experimento de forecasting com janelas temporais, avaliação fora da amostra e persistência de artefatos.
 
-### Storytelling técnico
-
-Em séries temporais, prever o próximo valor não depende só do modelo escolhido. Também depende de como a sequência é transformada em janelas supervisionadas, de como o corte temporal entre treino e teste é preservado e de como o experimento é observado ao longo do treino. É exatamente nesse tipo de cenário que `TensorBoard` ajuda, porque torna visíveis curvas de convergência, divergência entre treino e validação e estabilidade do processo.
-
-Este projeto foi desenhado com essa lógica:
-
-- materializa uma série temporal sintética de demanda diária;
-- transforma a série em janelas supervisionadas com `window_size = 14`;
-- tenta executar o caminho principal com `TensorFlow/Keras`;
-- grava logs em `logs/fit/` para leitura posterior no `TensorBoard`;
-- mantém um fallback local com `MLPRegressor` quando `tensorflow` não está disponível.
 
 ### Objetivo arquitetural
 
@@ -31,20 +20,20 @@ Essa organização é importante porque forecasting não é apenas modelagem: é
 
 ### Arquitetura do projeto
 
-- [src/data_factory.py](/Users/flaviagaia/Documents/CV_FLAVIA_CODEX/time-series-forecasting-tensorflow/src/data_factory.py)
-- [src/modeling.py](/Users/flaviagaia/Documents/CV_FLAVIA_CODEX/time-series-forecasting-tensorflow/src/modeling.py)
-- [main.py](/Users/flaviagaia/Documents/CV_FLAVIA_CODEX/time-series-forecasting-tensorflow/main.py)
-- [tests/test_project.py](/Users/flaviagaia/Documents/CV_FLAVIA_CODEX/time-series-forecasting-tensorflow/tests/test_project.py)
+- [src/data_factory.py](src/data_factory.py)
+- [src/modeling.py](src/modeling.py)
+- [main.py](main.py)
+- [tests/test_project.py](tests/test_project.py)
 
 ### Papel técnico de cada arquivo
 
-- [src/data_factory.py](/Users/flaviagaia/Documents/CV_FLAVIA_CODEX/time-series-forecasting-tensorflow/src/data_factory.py)
+- [src/data_factory.py](src/data_factory.py)
   gera a série temporal sintética com tendência e sazonalidade, persistindo a base bruta em `CSV`.
-- [src/modeling.py](/Users/flaviagaia/Documents/CV_FLAVIA_CODEX/time-series-forecasting-tensorflow/src/modeling.py)
+- [src/modeling.py](src/modeling.py)
   constrói janelas supervisionadas, executa o treino principal com `TensorFlow/Keras`, aplica o fallback com `MLPRegressor`, calcula métricas e grava os artefatos do run.
-- [main.py](/Users/flaviagaia/Documents/CV_FLAVIA_CODEX/time-series-forecasting-tensorflow/main.py)
+- [main.py](main.py)
   executa o pipeline de ponta a ponta e imprime o sumário consolidado.
-- [tests/test_project.py](/Users/flaviagaia/Documents/CV_FLAVIA_CODEX/time-series-forecasting-tensorflow/tests/test_project.py)
+- [tests/test_project.py](tests/test_project.py)
   valida o contrato mínimo do pipeline usando thresholds compatíveis com o runtime local validado.
 
 ### Pipeline
@@ -103,15 +92,15 @@ No runtime validado, os erros refletem o caminho `fallback_without_tensorflow`. 
 ### Artefatos gerados
 
 - série temporal materializada:
-  [data/raw/daily_demand_series.csv](/Users/flaviagaia/Documents/CV_FLAVIA_CODEX/time-series-forecasting-tensorflow/data/raw/daily_demand_series.csv)
+  [data/raw/daily_demand_series.csv](data/raw/daily_demand_series.csv)
 - previsões fora da amostra:
-  [data/processed/forecast_values.csv](/Users/flaviagaia/Documents/CV_FLAVIA_CODEX/time-series-forecasting-tensorflow/data/processed/forecast_values.csv)
+  [data/processed/forecast_values.csv](data/processed/forecast_values.csv)
 - relatório consolidado:
-  [data/processed/time_series_forecasting_report.json](/Users/flaviagaia/Documents/CV_FLAVIA_CODEX/time-series-forecasting-tensorflow/data/processed/time_series_forecasting_report.json)
+  [data/processed/time_series_forecasting_report.json](data/processed/time_series_forecasting_report.json)
 - modelo persistido:
-  [artifacts/best_model.joblib](/Users/flaviagaia/Documents/CV_FLAVIA_CODEX/time-series-forecasting-tensorflow/artifacts/best_model.joblib)
+  [artifacts/best_model.joblib](artifacts/best_model.joblib)
 - histórico do run:
-  [logs/fit/20260401-174656/history.json](/Users/flaviagaia/Documents/CV_FLAVIA_CODEX/time-series-forecasting-tensorflow/logs/fit/20260401-174656/history.json)
+  [logs/fit/20260401-174656/history.json](logs/fit/20260401-174656/history.json)
 
 ### Contrato do relatório final
 
@@ -189,10 +178,10 @@ When `tensorflow` is unavailable, the repository falls back to `MLPRegressor`. T
 
 ### Generated artifacts
 
-- [data/raw/daily_demand_series.csv](/Users/flaviagaia/Documents/CV_FLAVIA_CODEX/time-series-forecasting-tensorflow/data/raw/daily_demand_series.csv)
-- [data/processed/forecast_values.csv](/Users/flaviagaia/Documents/CV_FLAVIA_CODEX/time-series-forecasting-tensorflow/data/processed/forecast_values.csv)
-- [data/processed/time_series_forecasting_report.json](/Users/flaviagaia/Documents/CV_FLAVIA_CODEX/time-series-forecasting-tensorflow/data/processed/time_series_forecasting_report.json)
-- [artifacts/best_model.joblib](/Users/flaviagaia/Documents/CV_FLAVIA_CODEX/time-series-forecasting-tensorflow/artifacts/best_model.joblib)
+- [data/raw/daily_demand_series.csv](data/raw/daily_demand_series.csv)
+- [data/processed/forecast_values.csv](data/processed/forecast_values.csv)
+- [data/processed/time_series_forecasting_report.json](data/processed/time_series_forecasting_report.json)
+- [artifacts/best_model.joblib](artifacts/best_model.joblib)
 
 ### TensorBoard note
 
